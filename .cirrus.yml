@@ -54,8 +54,8 @@ task:
       # Source
       - rm -rf prebuilts/tools-aosp
       - rm -rf prebuilts/clang/host/linux-x86
-      - rm -rf prebuilts/gcc/darwin-x86/aarch64/aarch64-linux-android-4.9
-      - rm -rf prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.9
+#      - rm -rf prebuilts/gcc/darwin-x86/aarch64/aarch64-linux-android-4.9
+#      - rm -rf prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.9
       - rm -rf vendor/aosp
       - rm -rf build/make
       - rm -rf packages/apps/Settings
