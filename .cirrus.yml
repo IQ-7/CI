@@ -54,6 +54,9 @@ task:
       # Source
       - rm -rf prebuilts/tools-aosp
       - rm -rf build/soong
+      - rm -rf vendor/qcom/opensource/commonsys/bluetooth_ext
+      - rm -rf vendor/qcom/opensource/commonsys/packages/apps/Bluetooth
+      - rm -rf vendor/qcom/opensource/commonsys/system/bt
 #      - rm -rf prebuilts/clang/host/linux-x86
 #      - rm -rf prebuilts/gcc/darwin-x86/aarch64/aarch64-linux-android-4.9
 #      - rm -rf prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.9
@@ -62,6 +65,9 @@ task:
       - rm -rf packages/apps/Settings
 #      - git clone --depth=1 https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86 -b android-10.0.0_r40 prebuilts/clang/host/linux-x86
       - git clone --depth=1 https://github.com/NusantaraProject-ROM/android_prebuilts_build-tools -b 10 prebuilts/tools-aosp
+      - git clone --depth=1 https://github.com/NusantaraProject-ROM/android_vendor_qcom_opensource_bluetooth_ext -b 10 vendor/qcom/opensource/commonsys/bluetooth_ext
+      - git clone --depth=1 https://github.com/NusantaraProject-ROM/android_vendor_qcom_opensource_packages_apps_Bluetooth -b 10 vendor/qcom/opensource/commonsys/packages/apps/Bluetooth
+      - git clone --depth=1 https://github.com/NusantaraProject-ROM/android_vendor_qcom_opensource_system_bt -b 10 vendor/qcom/opensource/commonsys/system/bt
       - git clone --depth=1 https://github.com/IQ-7/platform_build_soong -b patch-1 build/soong
       - git clone --depth=1 https://github.com/IQ-7/platform_vendor_aosp -b 10.x vendor/aosp
       - git clone --depth=1 https://github.com/IQ-7/platform_build -b 10.x build/make
@@ -75,8 +81,8 @@ task:
       - echo "============================"
       - echo "Starting the Build..."
       - echo "============================"
-      - ./collect.sh
-#      - ./final.sh
+#      - ./collect.sh
+      - ./final.sh
       - curl -s https://api.telegram.org/bot$tokentl/sendMessage -d chat_id=$idtl -d text="Build $(cd /tmp/rom/out/target/product/ginkgo/ && ls AospExtended*.zip) Completed!"
       - echo "============================"
       - echo "Build Completed!"
@@ -87,7 +93,7 @@ task:
       - echo "Uploading the Build...."
       - echo "============================"
       - curl -s https://api.telegram.org/bot$tokentl/sendMessage -d chat_id=$idtl -d text="Uploading Build $(cd /tmp/rom/out/target/product/ginkgo/ && ls AospExtended*.zip)"
-#      - rclone copy /tmp/rom/out/target/product/ginkgo/AospExtended*.zip rom:ginkgo -P
+      - rclone copy /tmp/rom/out/target/product/ginkgo/AospExtended*.zip rom:ginkgo -P
       - curl -s https://api.telegram.org/bot$tokentl/sendMessage -d chat_id=$idtl -d text="Build $(cd /tmp/rom/out/target/product/ginkgo/ && ls AospExtended*.zip) Uploaded Successfully!"
       - curl -s https://api.telegram.org/bot$tokentl/sendMessage -d chat_id=$idtl -d text="Download link https://rom.builderz.workers.dev/0:/ginkgo/$(cd /tmp/rom/out/target/product/ginkgo/ && ls AospExtended*.zip)"
       - curl -s https://api.telegram.org/bot$tokentl/sendMessage -d chat_id=$idtl -d text="Compres ccache"
