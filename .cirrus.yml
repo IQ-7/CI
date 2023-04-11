@@ -56,12 +56,12 @@ task:
 #      - rm -rf prebuilts/clang/host/linux-x86
 #      - rm -rf prebuilts/gcc/darwin-x86/aarch64/aarch64-linux-android-4.9
 #      - rm -rf prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.9
-#      - rm -rf vendor/aosp
+      - rm -rf vendor/aosp
       - rm -rf build/make
       - rm -rf packages/apps/Settings
 #      - git clone --depth=1 https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86 -b android-10.0.0_r40 prebuilts/clang/host/linux-x86
       - git clone --depth=1 https://github.com/NusantaraProject-ROM/android_prebuilts_build-tools -b 10 prebuilts/tools-aosp
-#      - git clone --depth=1 https://github.com/IQ-7/platform_vendor_aosp -b 10.x vendor/aosp
+      - git clone --depth=1 https://github.com/IQ-7/platform_vendor_aosp -b 10.x vendor/aosp
       - git clone --depth=1 https://github.com/IQ-7/platform_build -b 10.x build/make
       - git clone --depth=1 https://github.com/IQ-7/platform_packages_apps_Settings -b 10.x packages/apps/Settings
       - curl -s https://api.telegram.org/bot$tokentl/sendMessage -d chat_id=$idtl -d text="Sync Completed!"
