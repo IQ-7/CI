@@ -57,6 +57,7 @@ task:
       - rm -rf vendor/qcom/opensource/commonsys/bluetooth_ext
       - rm -rf vendor/qcom/opensource/commonsys/packages/apps/Bluetooth
       - rm -rf vendor/qcom/opensource/commonsys/system/bt
+      - rm -rf system/bt
 #      - rm -rf prebuilts/clang/host/linux-x86
 #      - rm -rf prebuilts/gcc/darwin-x86/aarch64/aarch64-linux-android-4.9
 #      - rm -rf prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.9
@@ -68,6 +69,7 @@ task:
       - git clone --depth=1 https://github.com/NusantaraProject-ROM/android_vendor_qcom_opensource_bluetooth_ext -b 10 vendor/qcom/opensource/commonsys/bluetooth_ext
       - git clone --depth=1 https://github.com/NusantaraProject-ROM/android_vendor_qcom_opensource_packages_apps_Bluetooth -b 10 vendor/qcom/opensource/commonsys/packages/apps/Bluetooth
       - git clone --depth=1 https://github.com/NusantaraProject-ROM/android_vendor_qcom_opensource_system_bt -b 10 vendor/qcom/opensource/commonsys/system/bt
+      - git clone --depth=1 https://github.com/NusantaraProject-ROM/android_system_bt -b 10 system/bt
       - git clone --depth=1 https://github.com/IQ-7/platform_build_soong -b patch-1 build/soong
       - git clone --depth=1 https://github.com/IQ-7/platform_vendor_aosp -b 10.x vendor/aosp
       - git clone --depth=1 https://github.com/IQ-7/platform_build -b 10.x build/make
