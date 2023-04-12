@@ -52,7 +52,7 @@ task:
       - git clone --depth=1 https://github.com/ryanzsz/android_vendor_miuicamera --single-branch -b arrow-10.0-ginkgo vendor/miuicamera
       - git clone --depth=1 https://gitlab.com/IQ-7/clang-proton --single-branch -b master prebuilts/clang/host/linux-x86/clang-12.0
       # Source
-      - rm -rf prebuilts/tools-aosp
+#      - rm -rf prebuilts/tools-aosp
       - rm -rf build/soong
       - rm -rf vendor/qcom/opensource/commonsys/bluetooth_ext
 #      - rm -rf vendor/qcom/opensource/commonsys/packages/apps/Bluetooth
@@ -65,7 +65,7 @@ task:
       - rm -rf build/make
       - rm -rf packages/apps/Settings
 #      - git clone --depth=1 https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86 -b android-10.0.0_r40 prebuilts/clang/host/linux-x86
-      - git clone --depth=1 https://github.com/NusantaraProject-ROM/android_prebuilts_build-tools -b 10 prebuilts/tools-aosp
+#      - git clone --depth=1 https://github.com/NusantaraProject-ROM/android_prebuilts_build-tools -b 10 prebuilts/tools-aosp
       - git clone --depth=1 https://github.com/NusantaraProject-ROM/android_vendor_qcom_opensource_bluetooth_ext -b 10 vendor/qcom/opensource/commonsys/bluetooth_ext
 #      - git clone --depth=1 https://github.com/NusantaraProject-ROM/android_vendor_qcom_opensource_packages_apps_Bluetooth -b 10 vendor/qcom/opensource/commonsys/packages/apps/Bluetooth
       - git clone --depth=1 https://github.com/NusantaraProject-ROM/android_vendor_qcom_opensource_system_bt -b 10 vendor/qcom/opensource/commonsys/system/bt
